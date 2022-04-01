@@ -1,0 +1,67 @@
+html, body {
+    height: 100vh;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+section {
+    display: grid;
+    grid-template-columns: 20%  80% ;
+    
+}
+aside {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 32vmin;
+    width: 18vmin;
+    background-color: black;
+}
+
+aside h2{
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    padding-bottom: 45px;
+}
+
+aside div {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+
+table {
+    border-spacing: 0px;
+}
+
+tr {
+    background-color: black;
+    
+}
+td {
+    height: 10vmin; 
+    width: 10vmin;
+    
+}
+td div {
+    margin: 0 auto;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: white;
+  }
+  

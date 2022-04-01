@@ -2,7 +2,7 @@
 const LOOKUP = {
     '1': '#5af287',
     '-1': '#C600EB',
-    'null': white
+    'null': 'white'
 };
 
 

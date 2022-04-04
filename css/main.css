@@ -45,23 +45,21 @@ aside div {
 
 table {
     border-spacing: 0px;
+    background-color:black;
 }
 
 tr {
     background-color: black;
+    height: 8vmin; 
+    width: 12vmin;
     
 }
 td {
-    height: 10vmin; 
-    width: 10vmin;
+    margin: 0 auto;
+    height: 6vmin;
+    width: 8vmin;
+    border-radius: 50%;
+    
+    background-color: white;
     
 }
-td div {
-    margin: 0 auto;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    pointer-events: none;
-    background-color: white;
-  }
-  

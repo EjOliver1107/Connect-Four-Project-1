@@ -12,20 +12,28 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+    background-color: black;
     
 }
 section {
     display: grid;
-    grid-template-columns: 20%  80% ;
+    grid-template-columns: 80%  20% ;
     
 }
 aside {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 32vmin;
-    width: 18vmin;
+    height: 350px;
+    width: 175px;
     background-color: black;
+    box-shadow: 0 0 .1rem #fff,
+    0 0 .1rem #fff,
+    0 0 1rem #33ff4b,
+    0 0 0.5rem #33ff4b,
+    0 0 1rem #33ff4b,
+    inset 0 0 1.3rem #33ff4b; 
 }
 
 aside h2{
@@ -40,26 +48,108 @@ aside div {
     width: 50px;
     background-color: white;
     border-radius: 50%;
+    animation: pulsate 1.5s infinite alternate;  
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #33ff4b,
+              0 0 0.8rem #33ff4b,
+              0 0 2.8rem #33ff4b,
+              inset 0 0 1.3rem #33ff4b; 
 }
 
 
 table {
+    margin-left: 224px;
+    margin-right: 40px;
     border-spacing: 0px;
     background-color:black;
+    height: 500px;
+    width: 550px;
+    border-spacing: 10px;
+    box-shadow: 0 0 .1rem #fff,
+    0 0 .1rem #fff,
+    0 0 1rem #33ff4b,
+    0 0 0.5rem #33ff4b,
+    0 0 1rem #33ff4b,
+    inset 0 0 1.3rem #33ff4b; 
 }
 
 tr {
     background-color: black;
-    height: 8vmin; 
-    width: 12vmin;
+    height: 50px; 
+    width: 100px;
     
 }
 td {
     margin: 0 auto;
-    height: 6vmin;
-    width: 8vmin;
-    border-radius: 50%;
-    
+    height: 60px;
+    width: 80px;
+    border-radius: 80%;
+    animation: pulsate 1.5s infinite alternate;  
+    border: 0.05rem solid #fff;
+    border-radius: 10rem;
+    box-shadow: 0 0 .1rem #fff,
+              0 0 .1rem #fff,
+              0 0 1rem #33ff4b,
+              0 0 0.5rem #33ff4b,
+              0 0 1rem #33ff4b,
+              inset 0 0 1.3rem #33ff4b; 
     background-color: white;
     
+    
 }
+
+h3 {
+    color: white;
+    padding: 20px 20px 20px 20px;
+}
+#play-agn-btn {
+    
+    height: 50px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    border-radius: 10rem;
+    box-shadow: 0 0 .1rem #fff,
+              0 0 .1rem #fff,
+              0 0 1rem #33ff4b,
+              0 0 0.5rem #33ff4b,
+              0 0 1rem #33ff4b,
+              inset 0 0 1.3rem #33ff4b;
+}
+#play-agn-btn:hover {
+    background-color: #33ff4b;
+}
+@keyframes pulsate {
+    
+    100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #bc13fe,
+        0 0 80px #bc13fe,
+        0 0 90px #bc13fe,
+        0 0 100px #bc13fe,
+        0 0 150px #bc13fe;
+    
+    }
+    
+    0% {
+  
+      text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 55px #bc13fe,
+      0 0 70px #bc13fe,
+      0 0 80px #bc13fe;
+  
+  }
+  

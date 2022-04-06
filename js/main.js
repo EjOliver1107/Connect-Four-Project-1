@@ -66,13 +66,17 @@ function handleMove(evt) {
     
 }
 function checkWin() {
-    for (let i = 0; i < board.length; i++){
-        for (let x = 0; x < board[i].length; x++){
-            if (board[i][x] === turn && board[i][x+1] === turn && board[i][x+2] === turn && board[i][x+3] === turn){
-                winner = true;
-                
-            }
-        }
+    for(let i=0; i < board.length -4; i++){
+      for(let j=0; j < board[i].length -4; j++){
+        if(board[i] [j]=== turn && board[i][j+1] === turn && board[i][j+2] && board[i][j+3]){
+          winner = true
+        } else if(board[i][j]=== turn && board[i+1][j] === turn && board[i+2][j] === turn && board[i+3][j]){
+          winner = true
+        }else if(board[i][j]=== turn && board[i+1][j+1] === turn && board[i+2][j+2] === turn && board[i+3][j+3]){
+          winner = true
+        }else if(board[i][j]=== turn && board[i+1][j-1] === turn && board[i+2][j-2] === turn && board[i+3][j-3]){
+          winner = true
+      }
     }
-}
-
+  }
+  };

@@ -34,7 +34,7 @@ function init() {
         [0, 0, 0, 0, 0, 0],
     ];
     turn = 1;
-    result = null;
+   
     render();
     
 }
@@ -51,7 +51,7 @@ function render() {
             
         });
     });
-
+    checkWin();
 }
 function handleMove(evt) {
     const colIdx = markerEls.indexOf(evt.target);
@@ -65,3 +65,14 @@ function handleMove(evt) {
     render();
     
 }
+function checkWin() {
+    for (let i = 0; i < board.length; i++){
+        for (let x = 0; x < board[i].length; x++){
+            if (board[i][x] === turn && board[i][x+1] === turn && board[i][x+2] === turn && board[i][x+3] === turn){
+                winner = true;
+                
+            }
+        }
+    }
+}
+

@@ -14,7 +14,7 @@ let winner;
 let result;
 /*----- cached element references -----*/
 const slots = [...document.querySelectorAll('td')];
-const message = document.querySelector('footer > h1');
+const currentTurn = document.querySelector('aside > div');
 const rows = document.querySelectorAll('tr');
 const markerEls = [...document.querySelectorAll('#markers> div')];
 /*----- event listeners -----*/
@@ -65,23 +65,3 @@ function handleMove(evt) {
     render();
     
 }
-function win(idx, inc) {
-    let checkIdx = idx;
-    let theRow = 0;
-    while (board[checkIdx] === turn && checkIdx < board.length) {
-        theRow++; 
-        checkIdx = checkIdx + inc;
-    }
-
-    checkIdx = idx - inc;
-
-    while (board[checkIdx] === turn && checkIdx >= 0) {
-        theRow++; 
-        checkIdx = checkIdx - inc;
-    
-
-    }
-    if (theRow >= 4) {
-        result = turn;
-    }
-};

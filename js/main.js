@@ -16,23 +16,22 @@ let winner;
 const slots = [...document.querySelectorAll('td')];
 const message = document.querySelector('footer > h1');
 const rows = document.querySelectorAll('tr');
-
-// const column = document.querySelector('td div')
+const markerEls = [...document.querySelectorAll('#markers> div')];
 /*----- event listeners -----*/
-document.querySelector('table').addEventListener('click', handleMove);
-
-
+document.getElementById('markers').addEventListener('click', handleMove);
+document.querySelector('button').addEventListener('click', init);
 /*----- functions -----*/
 init();
 
 function init() {
     board = [
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
     ];
     turn = 1;
     render();
@@ -40,24 +39,24 @@ function init() {
 
 function render() {
     board.forEach(function(colArr, colIdx){
-        console.log('colArr', colArr);
+        // console.log('colArr', colArr);
         colArr.forEach(function(cellVal, rowIdx) {
-            console.log('cellVall', cellVal);
-            console.log('rowIdx', rowIdx);
+            // console.log('cellVall', cellVal);
+            // console.log('rowIdx', rowIdx);
             const cellEl = document.getElementById(`cl${colIdx}r${rowIdx}`)
-            console.log('cellEl', cellEl);
-            cellEl[rowIdx].style.backgroundColor = LOOKUP[cellVal];
+            // console.log('cellEl', cellEl);
+            cellEl.style.backgroundColor = LOOKUP[cellVal];
             
         });
     });
 
 }
 function handleMove(evt) {
-    const colIdx = slots.indexOf(evt.target);
+    const colIdx = markerEls.indexOf(evt.target);
     if (colIdx === -1) return;
     const colArr = board[colIdx];
-    console.log(colIdx);
-    console.log(colArr);
+    // console.log(colIdx);
+    // console.log(colArr);
     const rowIdx = colArr.indexOf(0);
     colArr[rowIdx] = turn;
     turn *= -1;

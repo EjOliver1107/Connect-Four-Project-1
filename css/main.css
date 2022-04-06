@@ -8,12 +8,14 @@ html, body {
 }
 
 body {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     background-color: black;
+    animation: pulsate 1.5s infinite alternate;  
     text-shadow:
     0 0 7px #fff,
     0 0 10px #fff,
@@ -37,6 +39,7 @@ aside {
     height: 350px;
     width: 175px;
     background-color: black;
+    animation: pulsate 1.5s infinite alternate;  
     box-shadow: 0 0 .1rem #fff,
     0 0 .1rem #fff,
     0 0 1rem #33ff4b,
@@ -61,6 +64,7 @@ aside div {
     border: 0.2rem solid #fff;
     border-radius: 2rem;
     padding: 0.4em;
+    animation: pulsate 1.5s infinite alternate;  
     box-shadow: 0 0 .2rem #fff,
               0 0 .2rem #fff,
               0 0 2rem #33ff4b,
@@ -68,8 +72,28 @@ aside div {
               0 0 2.8rem #33ff4b,
               inset 0 0 1.3rem #33ff4b; 
 }
+#markers {
+    display: grid;
+    grid-template-columns: repeat(7,78.5px);
+    /* margin-left: 150px; */
+    /* margin-top: 2vmin; */
+    gap: -10px;
 
-
+}
+#markers > div {
+    animation: pulsate 1.5s infinite alternate;  
+    height: 10px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: white transparent transparent;
+    transform: scale(0.7);
+    box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #33ff4b,
+              0 0 0.8rem #33ff4b,
+              0 0 2.8rem #33ff4b,
+              inset 0 0 1.3rem #33ff4b; 
+}
 table {
     margin-left: 224px;
     margin-right: 40px;
@@ -78,6 +102,7 @@ table {
     height: 500px;
     width: 550px;
     border-spacing: 10px;
+    animation: pulsate 1.5s infinite alternate;
     box-shadow: 0 0 .1rem #fff,
     0 0 .1rem #fff,
     0 0 1rem #33ff4b,
@@ -99,6 +124,7 @@ td {
     border-radius: 80%;
     animation: pulsate 1.5s infinite alternate;  
     border: 0.05rem solid #fff;
+    animation: pulsate 1.5s infinite alternate;
     border-radius: 10rem;
     box-shadow: 0 0 .1rem #fff,
               0 0 .1rem #fff,
@@ -122,6 +148,7 @@ h3 {
     background-color: black;
     color: white;
     border-radius: 10rem;
+    animation: pulsate 1.5s infinite alternate;
     box-shadow: 0 0 .1rem #fff,
               0 0 .1rem #fff,
               0 0 1rem #33ff4b,
@@ -140,11 +167,11 @@ h3 {
         0 0 4px #fff,
         0 0 11px #fff,
         0 0 19px #fff,
-        0 0 40px #bc13fe,
-        0 0 80px #bc13fe,
-        0 0 90px #bc13fe,
-        0 0 100px #bc13fe,
-        0 0 150px #bc13fe;
+        0 0 40px #33ff4b,
+        0 0 80px #33ff4b,
+        0 0 90px #33ff4b,
+        0 0 100px #33ff4b,
+        0 0 150px #33ff4b;
     
     }
     
@@ -154,11 +181,11 @@ h3 {
       0 0 2px #fff,
       0 0 4px #fff,
       0 0 6px #fff,
-      0 0 10px #bc13fe,
-      0 0 45px #bc13fe,
-      0 0 55px #bc13fe,
-      0 0 70px #bc13fe,
-      0 0 80px #bc13fe;
+      0 0 10px #33ff4b,
+      0 0 45px #33ff4b,
+      0 0 55px #33ff4b,
+      0 0 70px #33ff4b,
+      0 0 80px #33ff4b;
   
   }
 }

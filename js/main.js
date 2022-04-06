@@ -14,7 +14,7 @@ let winner;
 let result;
 /*----- cached element references -----*/
 const slots = [...document.querySelectorAll('td')];
-const message = document.querySelector('footer > h1');
+const currentTurn = document.querySelector('aside > div');
 const rows = document.querySelectorAll('tr');
 const markerEls = [...document.querySelectorAll('#markers> div')];
 /*----- event listeners -----*/
@@ -34,19 +34,19 @@ function init() {
         [0, 0, 0, 0, 0, 0],
     ];
     turn = 1;
-    result = null;
+    result = 0;
     render();
     
 }
 
 function render() {
     board.forEach(function(colArr, colIdx){
-        // console.log('colArr', colArr);
+        console.log('colArr', colArr);
         colArr.forEach(function(cellVal, rowIdx) {
-            // console.log('cellVall', cellVal);
-            // console.log('rowIdx', rowIdx);
+            console.log('cellVall', cellVal);
+            console.log('rowIdx', rowIdx);
             const cellEl = document.getElementById(`cl${colIdx}r${rowIdx}`)
-            // console.log('cellEl', cellEl);
+            console.log('cellEl', cellEl);
             cellEl.style.backgroundColor = LOOKUP[cellVal];
             
         });
@@ -61,27 +61,10 @@ function handleMove(evt) {
     // console.log(colArr);
     const rowIdx = colArr.indexOf(0);
     colArr[rowIdx] = turn;
-    turn *= -1;
+        turn *= -1;
     render();
     
 }
-function win(idx, inc) {
-    let checkIdx = idx;
-    let theRow = 0;
-    while (board[checkIdx] === turn && checkIdx < board.length) {
-        theRow++; 
-        checkIdx = checkIdx + inc;
-    }
+function determineWinner () {
 
-    checkIdx = idx - inc;
-
-    while (board[checkIdx] === turn && checkIdx >= 0) {
-        theRow++; 
-        checkIdx = checkIdx - inc;
-    
-
-    }
-    if (theRow >= 4) {
-        result = turn;
-    }
-};
+}

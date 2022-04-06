@@ -11,7 +11,7 @@ const LOOKUP = {
 let board;
 let turn;
 let winner;
-
+let result;
 /*----- cached element references -----*/
 const slots = [...document.querySelectorAll('td')];
 const message = document.querySelector('footer > h1');
@@ -34,7 +34,9 @@ function init() {
         [0, 0, 0, 0, 0, 0],
     ];
     turn = 1;
+    result = null;
     render();
+    
 }
 
 function render() {
@@ -63,3 +65,23 @@ function handleMove(evt) {
     render();
     
 }
+function win(idx, inc) {
+    let checkIdx = idx;
+    let theRow = 0;
+    while (board[checkIdx] === turn && checkIdx < board.length) {
+        theRow++; 
+        checkIdx = checkIdx + inc;
+    }
+
+    checkIdx = idx - inc;
+
+    while (board[checkIdx] === turn && checkIdx >= 0) {
+        theRow++; 
+        checkIdx = checkIdx - inc;
+    
+
+    }
+    if (theRow >= 4) {
+        result = turn;
+    }
+};

@@ -4,7 +4,10 @@ const LOOKUP = {
     '-1': '#C600EB',
     '0': 'white'
 };
-
+const bogosBinted = {
+  '1': 'Purple',
+  '-1': 'Green'
+};
 
 
 /*----- app's state (variables) -----*/
@@ -39,7 +42,8 @@ function init() {
     turn = 1;
     tieArray= [];
     render();
-   
+    renderTurn();
+    message.innerHTML = ''
   } 
 
   function render() {
@@ -56,6 +60,7 @@ function init() {
     });
     
   }
+ 
   function getWinner(colIdx, rowIdx) {
     return checkVertWin(colIdx, rowIdx) || checkHorzWin(colIdx, rowIdx);
   }
@@ -66,15 +71,26 @@ function init() {
         const colArr = board[colIdx];
         // console.log(colIdx);
         // console.log(colArr);
+        console.log(turn);
         const rowIdx = colArr.indexOf(0);
         colArr[rowIdx] = turn;
         turn *= -1;
+        // currentTurn.style.background = LOOKUP[turn];
         render();
+        renderTurn();
         getWinner(colIdx, rowIdx);
         tieArray.push(1);
         tieCheck();
+        // renderWin(player);
       }
-      
+      // function renderWin(player) {
+      //   message.innerHTML = `Player ${bogosBinted[player]}`;
+      //   winner = true;
+      // }     
+  function renderTurn() {
+    currentTurn.style.backgroundColor = LOOKUP[turn];
+   
+  }
       function checkVertWin(colIdx, rowIdx) {
   const player = board[colIdx][rowIdx];
   let count = 1; 
@@ -89,7 +105,7 @@ function init() {
     count++;
     idx--;
   }
-  return count === 4 ? winner = true : null; 
+  return count === 4 ? renderWin(player) : null; 
 }
 
 
@@ -108,7 +124,7 @@ function checkHorzWin(colIdx, rowIdx) {
     count++;
     idx--;
   }
-  return count >= 4 ? winner = true: null;
+  return count >= 4 ? renderWin(player) : null;
 }
 function tieCheck() {
  
@@ -116,3 +132,28 @@ function tieCheck() {
       message.innerHTML = 'There has been a stalemate!';
   }
 }
+
+function checkForwardSlash(colIdx, rowIdx) {
+  const player = board[colIdx][rowIdx];
+  let count = 1; 
+  //count right
+  let idx1 = colIdx - 1;// initialize to one above 
+  let idx2 = rowIdx + 1;
+  while (idx1 >= 0  && idx2 < board[0].length && board[idx1][idx2] === player) {
+    count++;
+    idx1--;
+    idx2++;
+  }
+  idx1 = colIdx + 1; // initialize to one above 
+  idx2 = rowIdx - 1
+  while (idx1 < board.length && idx2 >= 0 && board[idx1][idx2] === player) {
+    count++;
+    idx1++;
+    idx2--;
+  }
+  return count === 4 ? renderWin(player) : null; 
+}
+
+
+
+

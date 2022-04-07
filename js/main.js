@@ -17,6 +17,7 @@ const slots = [...document.querySelectorAll('td')];
 const currentTurn = document.querySelector('aside > div');
 const rows = document.querySelectorAll('tr');
 const markerEls = [...document.querySelectorAll('#markers> div')];
+const message = document.querySelector('aside > h3');
 /*----- event listeners -----*/
 document.getElementById('markers').addEventListener('click', handleMove);
 document.querySelector('button').addEventListener('click', init);
@@ -51,7 +52,14 @@ function render() {
             
         });
     });
-    checkWin();
+    if (winner === 'T') {
+      message.innerHTML = 'No one Wins!'
+    } else if (winner) {
+      message.innerHTML = `Player ${LOOKUP[winner].toUpperCase()}`;
+    } else {
+        currentTurn.style.backgroundColor = LOOKUP[turn];
+    }
+
 }
 function handleMove(evt) {
     const colIdx = markerEls.indexOf(evt.target);
@@ -62,6 +70,7 @@ function handleMove(evt) {
     const rowIdx = colArr.indexOf(0);
     colArr[rowIdx] = turn;
     turn *= -1;
+    winner = checkWin();
     render();
     
 }
@@ -76,7 +85,10 @@ function checkWin() {
           winner = true
         }else if(board[i][j]=== turn && board[i+1][j-1] === turn && board[i+2][j-2] === turn && board[i+3][j-3]){
           winner = true
+      } else {
+        return 'T';
       }
+
     }
   }
   };

@@ -1,4 +1,4 @@
-# Connect-Four-Project-1
+# Connect-Four-Project-1 (P1)
 General Assembly Project 1: Pseudo code
 1.) Define required constants
 

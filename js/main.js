@@ -11,7 +11,6 @@ const LOOKUP = {
 let board;
 let turn;
 let winner;
-let result;
 /*----- cached element references -----*/
 const slots = [...document.querySelectorAll('td')];
 const currentTurn = document.querySelector('aside > div');
@@ -34,7 +33,7 @@ function init() {
         [0, 0, 0, 0, 0, 0],
     ];
     turn = 1;
-    result = 0;
+   
     render();
     
 }
@@ -51,7 +50,7 @@ function render() {
             
         });
     });
-
+    checkWin();
 }
 function handleMove(evt) {
     const colIdx = markerEls.indexOf(evt.target);
@@ -65,6 +64,19 @@ function handleMove(evt) {
     render();
     
 }
-function determineWinner () {
 
-}
+function checkWin() {
+    for(let i=0; i < board.length -4; i++){
+      for(let j=0; j < board[i].length -4; j++){
+        if(board[i] [j]=== turn && board[i][j+1] === turn && board[i][j+2] && board[i][j+3]){
+          winner = true
+        } else if(board[i][j]=== turn && board[i+1][j] === turn && board[i+2][j] === turn && board[i+3][j]){
+          winner = true
+        }else if(board[i][j]=== turn && board[i+1][j+1] === turn && board[i+2][j+2] === turn && board[i+3][j+3]){
+          winner = true
+        }else if(board[i][j]=== turn && board[i+1][j-1] === turn && board[i+2][j-2] === turn && board[i+3][j-3]){
+          winner = true
+      }
+    }
+  }
+  };

@@ -1,15 +1,15 @@
 <div align="center">
    <img src="https://wallpaperaccess.com/full/230556.jpg"/>
    <h1> Connect 4</h1>
-   <h3><a href="https://ajcairel.github.io/Konnect4/">Play the Game!</a></h3>
+   <h3><a href=https://k1neticz.github.io/Connect-Four-Project-1/">Play the Game!</a></h3>
    <h5>Ej Oliver</h5>                             
-   <a href="[github page]" target="_blank">
+   <a href="https://github.com/K1neticz" target="_blank">
       <img src="https://img.shields.io/badge/-Portfolio:_user.github.io-darkgreen?style=flat&logo=medium"/>
    </a>
-   <a href="https://www.linkedin.com/in/alexandercairel/" target="_blank">
+   <a href="https://www.linkedin.com/in/eldrickoliver/" target="_blank">
       <img src="https://img.shields.io/badge/-linkedin.com/in/user-blue?style=flat&``logo=Linkedin&logoColor=white">
    </a> 
-   <a href="mailto:alexanderjcairel@gmail.com" target="_blank">
+   <a href="mailto:ej.oliver1107@gmail.com" target="_blank">
       <img src="https://img.shields.io/badge/-user@gmail.com-c14438?style=flat&logo=Gmail&``logoColor=white">
    </a>
 </div>
@@ -31,10 +31,10 @@
 | Description | Screenshot |
 |------------ | ------------|
 | <h3 align="center">Starting Gameboard</h3> | <img src="https://i.imgur.com/WLKd0rk.png" width="700"/> |
-| <h3 align="center">Green Win</h3> | <img src="https://i.imgur.com/OT3iZJu.png" width="700"/> |
+| <h3 align="center">Green Win</h3> | <img src="https://i.imgur.com/VPnJ51s.png" width="700"/> |
 | <h3 align="center">Purple's Turn</h3> | <img src="https://i.imgur.com/c8mwz3o.png" width="700"/> |
-| <h3 align="center">Purple Win</h3> | <img src="https://i.imgur.com/nFkkcaM.png" width="700"/> |
-| <h3 align="center">:Tie game </h3> | <img src="https://i.imgur.com/0Kh5414.png" width="700"/> |
+| <h3 align="center">Purple Win</h3> | <img src="https://i.imgur.com/w6415As.png" width="700"/> |
+| <h3 align="center">Diagonal Win </h3> | <img src="https://i.imgur.com/zf3USsG.png" width="700"/> |
 
 
 
@@ -62,7 +62,7 @@
 
 <details open>   
 <summary>Deployed Link (GitHub Pages)</summary>
-<p><a href="https://ajcairel.github.io/Konnect4/">DEPLOYED LINK</a></p>
+<p><a href="https://k1neticz.github.io/Connect-Four-Project-1/">DEPLOYED LINK</a></p>
 </details>
 
 ## :fast_forward: Next Steps   

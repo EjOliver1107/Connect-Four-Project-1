@@ -83,7 +83,7 @@ function handleMove(evt) {
       tieCheck();
       winner = getWinner(colIdx, rowIdx);
       if (winner) {
-        renderWin()
+        renderWin();
        
       }
     }

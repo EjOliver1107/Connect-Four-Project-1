@@ -47,51 +47,45 @@ function init() {
   winner = null;
 } 
 
-function render() {
-  board.forEach(function(colArr, colIdx){
-    // console.log('colArr', colArr);
-    colArr.forEach(function(cellVal, rowIdx) {
-      // console.log('cellVall', cellVal);
-      // console.log('rowIdx', rowIdx);
-      const cellEl = document.getElementById(`cl${colIdx}r${rowIdx}`)
-      // console.log('cellEl', cellEl);
-      cellEl.style.backgroundColor = LOOKUP[cellVal];
-      
+  function render() {
+    board.forEach(function(colArr, colIdx){
+      colArr.forEach(function(cellVal, rowIdx) {
+        const cellEl = document.getElementById(`cl${colIdx}r${rowIdx}`)
+        cellEl.style.backgroundColor = LOOKUP[cellVal];
+        
+      });
     });
-  });
-  renderMarkers();
-}
-
-function getWinner(colIdx, rowIdx) {
-  return checkVertWin(colIdx, rowIdx) || checkHorzWin(colIdx, rowIdx) || checkForwardSlash(colIdx, rowIdx) || checkBackSlash(colIdx, rowIdx);
-}
-function renderMarkers() {
-  
-  markerEls.forEach(function(markerEl, colIdx) {
-    markerEl.style.visibility = board[colIdx].includes(0) ? 'visible' : 'hidden';
-  });
-}
-function handleMove(evt) {
-  if (winner) return;
-  const colIdx = markerEls.indexOf(evt.target);
-      if (colIdx === -1) return;
-      const colArr = board[colIdx];
-      console.log('colIdx: ',colIdx);
-      
-      console.log(turn);
-      const rowIdx = colArr.indexOf(0);
-      colArr[rowIdx] = turn;
-      turn *= -1;
-      console.log('rowIdx: ',rowIdx);
-      render();
-      renderTurn();
-      getWinner(colIdx, rowIdx);
-      tieArray.push(1);
-      tieCheck();
-      winner = getWinner(colIdx, rowIdx);
-      if (winner) {
-        renderWin()
-       
+    renderMarkers();
+  }
+ 
+  function getWinner(colIdx, rowIdx) {
+    return checkVertWin(colIdx, rowIdx) || checkHorzWin(colIdx, rowIdx) || checkForwardSlash(colIdx, rowIdx) || checkBackSlash(colIdx, rowIdx);
+  }
+  function renderMarkers() {
+    
+    markerEls.forEach(function(markerEl, colIdx) {
+      markerEl.style.visibility = board[colIdx].includes(0) ? 'visible' : 'hidden';
+    });
+  }
+  function handleMove(evt) {
+    if (winner) return;
+    const colIdx = markerEls.indexOf(evt.target);
+        if (colIdx === -1) return;
+        const colArr = board[colIdx];
+        
+        const rowIdx = colArr.indexOf(0);
+        colArr[rowIdx] = turn;
+        turn *= -1;
+        render();
+        renderTurn();
+        getWinner(colIdx, rowIdx);
+        tieArray.push(1);
+        tieCheck();
+        winner = getWinner(colIdx, rowIdx);
+        if (winner) {
+          renderWin()
+         
+        }
       }
     }
     function renderWin() {
@@ -166,18 +160,25 @@ return count === 4 ? winner = player : null;
 }
 
 function checkForwardSlash(colIdx, rowIdx) {
-const player = board[colIdx][rowIdx];
-let count = 1; 
-let idx1 = colIdx + 1; 
-let idx2 = rowIdx + 1;
-console.log('first set',idx1, idx2);
+  const player = board[colIdx][rowIdx];
+  let count = 1; 
+  let idx1 = colIdx + 1; 
+  let idx2 = rowIdx + 1;
 
-while (idx1 < board[0].length  && idx2 < board.length && board[idx1][idx2] === player) {
-  count++;
-  idx1++;
-  idx2++;
-  console.log('up right')
+  while (idx1 < board[0].length  && idx2 < board.length && board[idx1][idx2] === player) {
+    count++;
+    idx1++;
+    idx2++;
 
+  }
+  idx1 = colIdx - 1; 
+  idx2 = rowIdx - 1;
+  while (idx1 >= 0 && idx2 >= 0 && board[idx1][idx2] === player) {
+    count++;
+    idx1--;
+    idx2--;
+  }
+  return count === 4 ? winner = player : null; 
 }
 idx1 = colIdx - 1; 
 idx2 = rowIdx - 1;

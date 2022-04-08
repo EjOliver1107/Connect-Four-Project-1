@@ -49,7 +49,7 @@
 ![Git](https://img.shields.io/badge/-Git-333?style=flat&logo=git)
 ![Github](https://img.shields.io/badge/-GitHub-333?style=flat&logo=github)
 
-<h2> :fire: Getting Started </h2>
+<h2> :fire: Getting Started :eyes: </h2>
 
 <h3> :calling: Instructions </h3>
 <details open>

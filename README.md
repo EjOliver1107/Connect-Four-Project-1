@@ -1,5 +1,5 @@
 <div align="center">
-   <img src="https://wallpaperaccess.com/full/230556.jpg"/>
+   <img src="https://i.imgur.com/aGAmsFg.jpeg"/>
    <h1> Connect 4</h1>
    <h3><a href=https://k1neticz.github.io/Connect-Four-Project-1/">Play the Game!</a></h3>
    <h5>Ej Oliver</h5>                             

@@ -1,19 +1,73 @@
-# Connect-Four-Project-1
-General Assembly Project 1: Pseudo code
-1.) Define required constants
+<div align="center">
+   <img src="https://wallpaperaccess.com/full/230556.jpg"/>
+   <h1> Connect 4</h1>
+   <h3><a href="https://ajcairel.github.io/Konnect4/">Play the Game!</a></h3>
+   <h5>Ej Oliver</h5>                             
+   <a href="[github page]" target="_blank">
+      <img src="https://img.shields.io/badge/-Portfolio:_user.github.io-darkgreen?style=flat&logo=medium"/>
+   </a>
+   <a href="https://www.linkedin.com/in/alexandercairel/" target="_blank">
+      <img src="https://img.shields.io/badge/-linkedin.com/in/user-blue?style=flat&``logo=Linkedin&logoColor=white">
+   </a> 
+   <a href="mailto:alexanderjcairel@gmail.com" target="_blank">
+      <img src="https://img.shields.io/badge/-user@gmail.com-c14438?style=flat&logo=Gmail&``logoColor=white">
+   </a>
+</div>
 
-2.) Define required variables for the game
+<h1>:pencil: Description</h1>
+<p>I humbly offer before you a simple connect 4 with neon as its source of spice.</p>
 
-3.) Store cached elements on the JS to be accessed whenever needed inside the code
+<details>
+<summary> :art: Wireframes</summary>
 
-4) Loading the app should:
-    4.1) Initialize the state variables
-    4.2) Render all values
-    4.3) Wait for user(s) to click on a circle
+| Description | Screenshot |
+|------------ | ------------|
+| <h3 align="center">Game</h3> | <img src="https://github.com/K1neticz/Connect-Four-Project-1/blob/main/wireframeproject%201.jpg?raw=true" width="700"/> |
+</details>
 
-5) When a player clicks a circle, change the color to match the player
-    5.1) As the circle is clicked, text should appear to display the turn of the current player.
-6) If one player gets 4 connected circles (vertically, horizontally, or diagonally) let that player be the winner of the game. If no circles end up connected then let the message display as a tie.
+<details>
+<summary> :gear: Functionality</summary>
 
-7) Once the player(s) finish the game let the replay button appear to re-initialize the game.
+| Description | Screenshot |
+|------------ | ------------|
+| <h3 align="center">Starting Gameboard</h3> | <img src="https://i.imgur.com/WLKd0rk.png" width="700"/> |
+| <h3 align="center">Green Win</h3> | <img src="https://i.imgur.com/OT3iZJu.png" width="700"/> |
+| <h3 align="center">Purple's Turn</h3> | <img src="https://i.imgur.com/c8mwz3o.png" width="700"/> |
+| <h3 align="center">Purple Win</h3> | <img src="https://i.imgur.com/nFkkcaM.png" width="700"/> |
+| <h3 align="center">:Tie game </h3> | <img src="https://i.imgur.com/0Kh5414.png" width="700"/> |
 
+
+
+
+</details>
+
+## :computer: Technologies Used
+
+![JavaScript](https://img.shields.io/badge/-JavaScript-333?style=flat&logo=javascript) 
+![HTML5](https://img.shields.io/badge/-HTML5-333?style=flat&logo=html5)
+![CSS3](https://img.shields.io/badge/-CSS-333?style=flat&logo=css3)
+![Git](https://img.shields.io/badge/-Git-333?style=flat&logo=git)
+![Github](https://img.shields.io/badge/-GitHub-333?style=flat&logo=github)
+
+<h2> :fire: Getting Started </h2>
+
+<h3> :calling: Instructions </h3>
+<details open>
+<summary>How to Play</summary>
+<ol>
+<li>Try to build a row of 4 (or more) checkers while keeping your opponent from doing the same.</li>
+<li>Horizontal, Vertical, and Diagonal ways to win.</li>
+</ol>
+</details>
+
+<details open>   
+<summary>Deployed Link (GitHub Pages)</summary>
+<p><a href="https://ajcairel.github.io/Konnect4/">DEPLOYED LINK</a></p>
+</details>
+
+## :fast_forward: Next Steps   
+
+### Upcoming Features
+
+- [ ] Animation for slot implementation
+- [ ] Theme changer

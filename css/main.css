@@ -53,6 +53,7 @@ aside h2{
     text-align: center;
     color: white;
     padding-bottom: 45px;
+    text-align: center;
 }
 
 aside div {
@@ -93,6 +94,20 @@ aside div {
               0 0 0.8rem #33ff4b,
               0 0 2.8rem #33ff4b,
               inset 0 0 1.3rem #33ff4b; 
+}
+#markers > div:hover {
+    animation: pulsate 1.5s infinite alternate;  
+    height: 10px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: #33ff4b transparent transparent;
+    transform: scale(0.7);
+    /* box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #33ff4b,
+              0 0 0.8rem #33ff4b,
+              0 0 2.8rem #33ff4b,
+              inset 0 0 1.3rem #33ff4b;  */
 }
 table {
     margin-left: 224px;

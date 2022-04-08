@@ -30,9 +30,9 @@
 
 | Description | Screenshot |
 |------------ | ------------|
-| <h3 align="center">Starting Gameboard</h3> | <img src="https://i.imgur.com/WLKd0rk.png" width="700"/> |
+| <h3 align="center">Starting Gameboard</h3> | <img src="https://i.imgur.com/urz1Mbg.png" width="700"/> |
 | <h3 align="center">Green Win</h3> | <img src="https://i.imgur.com/VPnJ51s.png" width="700"/> |
-| <h3 align="center">Purple's Turn</h3> | <img src="https://i.imgur.com/c8mwz3o.png" width="700"/> |
+| <h3 align="center">Purple's Turn</h3> | <img src="https://i.imgur.com/wX9TB4n.png" width="700"/> |
 | <h3 align="center">Purple Win</h3> | <img src="https://i.imgur.com/w6415As.png" width="700"/> |
 | <h3 align="center">Diagonal Win </h3> | <img src="https://i.imgur.com/zf3USsG.png" width="700"/> |
 

@@ -1,7 +1,7 @@
 <div align="center">
    <img src="https://i.imgur.com/aGAmsFg.jpeg"/>
    <h1> Connect 4</h1>
-   <h3><a href=https://k1neticz.github.io/Connect-Four-Project-1/">Play the Game!</a></h3>
+   <h3><a href="https://k1neticz.github.io/Connect-Four-Project-1/">Play the Game!</a></h3>
    <h5>Ej Oliver</h5>                             
    <a href="https://github.com/K1neticz" target="_blank">
       <img src="https://img.shields.io/badge/-Portfolio:_user.github.io-darkgreen?style=flat&logo=medium"/>

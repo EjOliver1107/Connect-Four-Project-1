@@ -5,8 +5,8 @@ const LOOKUP = {
     '0': 'white'
 };
 const bogosBinted = {
-  '1': 'Purple',
-  '-1': 'Green'
+  '1': 'Green',
+  '-1': 'Purple'
 };
 
 
@@ -43,7 +43,8 @@ function init() {
     tieArray= [];
     render();
     renderTurn();
-    message.innerHTML = ''
+    message.innerHTML = '';
+    winner = null;
   } 
 
   function render() {
@@ -58,35 +59,45 @@ function init() {
         
       });
     });
-    
+    renderMarkers();
   }
  
   function getWinner(colIdx, rowIdx) {
-    return checkVertWin(colIdx, rowIdx) || checkHorzWin(colIdx, rowIdx);
+    return checkVertWin(colIdx, rowIdx) || checkHorzWin(colIdx, rowIdx) || checkForwardSlash(colIdx, rowIdx) || checkBackSlash(colIdx, rowIdx);
   }
-
+  function renderMarkers() {
+    
+    markerEls.forEach(function(markerEl, colIdx) {
+      markerEl.style.visibility = board[colIdx].includes(0) ? 'visible' : 'hidden';
+    });
+  }
   function handleMove(evt) {
+    if (winner) return;
     const colIdx = markerEls.indexOf(evt.target);
         if (colIdx === -1) return;
         const colArr = board[colIdx];
-        // console.log(colIdx);
-        // console.log(colArr);
+        console.log('colIdx: ',colIdx);
+        
         console.log(turn);
         const rowIdx = colArr.indexOf(0);
         colArr[rowIdx] = turn;
         turn *= -1;
-        // currentTurn.style.background = LOOKUP[turn];
+        console.log('rowIdx: ',rowIdx);
         render();
         renderTurn();
         getWinner(colIdx, rowIdx);
         tieArray.push(1);
         tieCheck();
-        // renderWin(player);
+        winner = getWinner(colIdx, rowIdx);
+        if (winner) {
+          renderWin()
+         
+        }
       }
-      // function renderWin(player) {
-      //   message.innerHTML = `Player ${bogosBinted[player]}`;
-      //   winner = true;
-      // }     
+      function renderWin() {
+        message.innerHTML = `Player ${bogosBinted[winner]} Wins!`;
+        currentTurn.style.backgroundColor = LOOKUP[winner];
+      }     
   function renderTurn() {
     currentTurn.style.backgroundColor = LOOKUP[turn];
    
@@ -105,7 +116,7 @@ function init() {
     count++;
     idx--;
   }
-  return count === 4 ? renderWin(player) : null; 
+  return count === 4 ? winner = player : null; 
 }
 
 
@@ -124,16 +135,16 @@ function checkHorzWin(colIdx, rowIdx) {
     count++;
     idx--;
   }
-  return count >= 4 ? renderWin(player) : null;
+  return count >= 4 ? winner = player: null;
 }
 function tieCheck() {
  
   if (tieArray.length === 42) {     
-      message.innerHTML = 'There has been a stalemate!';
+      message.innerHTML = 'Its a tie!';
   }
 }
 
-function checkForwardSlash(colIdx, rowIdx) {
+function checkBackSlash(colIdx, rowIdx) {
   const player = board[colIdx][rowIdx];
   let count = 1; 
   //count right
@@ -145,15 +156,37 @@ function checkForwardSlash(colIdx, rowIdx) {
     idx2++;
   }
   idx1 = colIdx + 1; // initialize to one above 
-  idx2 = rowIdx - 1
+  idx2 = rowIdx - 1;
   while (idx1 < board.length && idx2 >= 0 && board[idx1][idx2] === player) {
     count++;
     idx1++;
     idx2--;
   }
-  return count === 4 ? renderWin(player) : null; 
+  return count === 4 ? winner = player : null;
 }
 
+function checkForwardSlash(colIdx, rowIdx) {
+  const player = board[colIdx][rowIdx];
+  let count = 1; 
+  let idx1 = colIdx + 1; 
+  let idx2 = rowIdx + 1;
+  console.log('first set',idx1, idx2);
 
+  while (idx1 < board[0].length  && idx2 < board.length && board[idx1][idx2] === player) {
+    count++;
+    idx1++;
+    idx2++;
+    console.log('up right')
 
-
+  }
+  idx1 = colIdx - 1; 
+  idx2 = rowIdx - 1;
+  console.log('second set',idx1, idx2);
+  while (idx1 >= 0 && idx2 >= 0 && board[idx1][idx2] === player) {
+    count++;
+    idx1--;
+    idx2--;
+    console.log('down left')
+  }
+  return count === 4 ? winner = player : null; 
+}

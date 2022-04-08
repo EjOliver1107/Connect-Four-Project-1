@@ -49,12 +49,8 @@ function init() {
 
   function render() {
     board.forEach(function(colArr, colIdx){
-      // console.log('colArr', colArr);
       colArr.forEach(function(cellVal, rowIdx) {
-        // console.log('cellVall', cellVal);
-        // console.log('rowIdx', rowIdx);
         const cellEl = document.getElementById(`cl${colIdx}r${rowIdx}`)
-        // console.log('cellEl', cellEl);
         cellEl.style.backgroundColor = LOOKUP[cellVal];
         
       });
@@ -76,13 +72,10 @@ function init() {
     const colIdx = markerEls.indexOf(evt.target);
         if (colIdx === -1) return;
         const colArr = board[colIdx];
-        console.log('colIdx: ',colIdx);
         
-        console.log(turn);
         const rowIdx = colArr.indexOf(0);
         colArr[rowIdx] = turn;
         turn *= -1;
-        console.log('rowIdx: ',rowIdx);
         render();
         renderTurn();
         getWinner(colIdx, rowIdx);
@@ -170,23 +163,19 @@ function checkForwardSlash(colIdx, rowIdx) {
   let count = 1; 
   let idx1 = colIdx + 1; 
   let idx2 = rowIdx + 1;
-  console.log('first set',idx1, idx2);
 
   while (idx1 < board[0].length  && idx2 < board.length && board[idx1][idx2] === player) {
     count++;
     idx1++;
     idx2++;
-    console.log('up right')
 
   }
   idx1 = colIdx - 1; 
   idx2 = rowIdx - 1;
-  console.log('second set',idx1, idx2);
   while (idx1 >= 0 && idx2 >= 0 && board[idx1][idx2] === player) {
     count++;
     idx1--;
     idx2--;
-    console.log('down left')
   }
   return count === 4 ? winner = player : null; 
 }
